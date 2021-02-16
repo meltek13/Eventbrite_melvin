@@ -8,7 +8,7 @@
 5.times do |index|
     User.create!(first_name: Faker::Games::Overwatch.hero,
                  last_name: Faker::Games::Overwatch.location,
-                 email: "users#{index}" + "@yopmail.com",
+                 email: "user#{index}00" + "@yopmail.com",
                  password: "coucou",
                  description: Faker::Lorem.paragraph_by_chars(number: rand(20..50)))
   end
@@ -20,7 +20,8 @@
                   title: Faker::Lorem.paragraph_by_chars(number: rand(5..140)),
                   description: Faker::Lorem.paragraph_by_chars(number: rand(20..1000)),
                   price: rand(1..1000),
-                  location: Faker::Address.city)
+                  location: Faker::Address.city,
+                  admin: User.all.sample)
   end
   
   Attendance.destroy_all
