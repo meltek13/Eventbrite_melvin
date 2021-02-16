@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_02_16_104820) do
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
     t.string "stripe_customer_id", default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_attendances_on_event_id"
     t.index ["user_id"], name: "index_attendances_on_user_id"
   end
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(version: 2021_02_16_104820) do
     t.integer "price"
     t.string "location"
     t.bigint "admin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["admin_id"], name: "index_events_on_admin_id"
   end
 

@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
 5.times do |index|
     User.create!(first_name: Faker::Games::Overwatch.hero,
                  last_name: Faker::Games::Overwatch.location,
-                 email: "user#{index}00" + "@yopmail.com",
+                 email: "human#{index}" + "@yopmail.com",
                  password: "coucou",
                  description: Faker::Lorem.paragraph_by_chars(number: rand(20..50)))
   end
