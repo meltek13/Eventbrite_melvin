@@ -31,19 +31,22 @@
 
       <div>
           <ul class="navbar-nav">
-            <% if current_user == nil %>
+            <% if user_signed_in? %>
+
+              <li class="nav-item">
+            <a class="nav-link" href="/users/show">Mon profil</a>
+          </li>
+              <li class="nav-item active ">
+                <a class="nav-item nav-link" <%= link_to "Sign out", destroy_user_session_path, method: :delete %></a>
+              </li>
+
+            <%else%>
+  
               <li class="nav-item active ">
                 <a class="nav-link" href="/users/sign_in">Connexion<span class="sr-only ">(current)</span></a>
               </li>
               <li class="nav-item active ">
                 <a class="nav-link" href="/users/sign_up">S'inscrire<span class="sr-only ">(current)</span></a>
-              </li>
-            <%else%>
-            <li class="nav-item">
-            <a class="nav-link" href="/users/show">Mon profil</a>
-          </li>
-              <li class="nav-item active ">
-                <a class="nav-item nav-link" <%= link_to "Se déconnecter", session_path(session.id), method: :delete %></a>
               </li>
              <%end%>
           </ul>
