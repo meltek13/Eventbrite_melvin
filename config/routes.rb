@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root to:'events#index'
   
+  root to:'events#index'
+  get 'users/show'
   resources :events
   
   devise_for :users
