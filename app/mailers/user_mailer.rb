@@ -1,7 +1,9 @@
 class UserMailer < ApplicationMailer
 
     default from: 'regnault.melvin@hotmail.fr'
- 
+    #validates :description, presence: true
+    #validates :first_name, presence: true
+    #validates :last_name, presence: true
   def welcome_email(user)
     #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
     @user = user 

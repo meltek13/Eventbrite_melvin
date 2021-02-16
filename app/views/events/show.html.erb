@@ -1,2 +1,18 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+
+<div class = "text-center mt-5 fs-3">
+titre
+<p><%= @event.title %></p>
+start date
+<p><%= @event.start_date %></p>
+description
+<p><%= @event.description %></p>
+durée
+<p><%= @event.duration %> ans</p>
+location
+<p><%= @event.location %></p>
+prix
+<p><%= @event.price%></p>
+créé par :
+<p><%= @event.admin.first_name%></p>
+<p><a href="/" class="btn btn-outline-warning">Retour à l'accueil</a></p>
+</div>
